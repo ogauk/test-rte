@@ -3,7 +3,7 @@ import FormRenderer, { componentTypes } from "@data-driven-forms/react-form-rend
 import { componentMapper } from "@data-driven-forms/mui-component-mapper";
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import { useFieldApi } from "@data-driven-forms/react-form-renderer";
 import MUIRichTextEditor from 'mui-rte';
@@ -80,8 +80,11 @@ export function PlainEditor({ onCancel, onSave, short='', full='' }) {
   }
 
   return (
-    <Paper>
+    <Grid container>
+      <Grid item xs={12}>
       <Typography variant="h5">Plain Editor</Typography>
+      </Grid>
+      <Grid item xs={12}>
       <Typography variant="h6">Short description</Typography>
       <MuiThemeProvider theme={defaultTheme}>
         <MUIRichTextEditor
@@ -94,6 +97,8 @@ export function PlainEditor({ onCancel, onSave, short='', full='' }) {
           ref={shortRef}
         />
       </MuiThemeProvider>
+      </Grid>
+      <Grid item xs={12}>
       <Typography variant="h6">Full description</Typography>
       <MuiThemeProvider theme={defaultTheme}>
         <MUIRichTextEditor
@@ -105,9 +110,12 @@ export function PlainEditor({ onCancel, onSave, short='', full='' }) {
           ref={fullRef}
         />
       </MuiThemeProvider>
-      <Button variant="outlined" color="primary" onClick={onCancel}>Cancel</Button>
-      <Button variant="outlined" color="primary" onClick={handleSave}>Send</Button>
-    </Paper>
+      </Grid>
+      <Grid item xs={12}>
+        <Button variant="outlined" color="primary" onClick={onCancel}>Cancel</Button>
+        <Button variant="outlined" color="primary" onClick={handleSave}>Send</Button>
+      </Grid>
+    </Grid>
   );
 }
 
