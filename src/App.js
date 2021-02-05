@@ -20,7 +20,7 @@ function App() {
               />
           </Grid>
           <Grid item>
-            <Typography variant="h5">Submitted</Typography>
+            <Typography variant="h5">Plain Submitted</Typography>
             {plain}
           </Grid>
         </Grid>
@@ -35,7 +35,7 @@ function App() {
           />
         </Grid>
         <Grid item>
-          <Typography variant="h5">Submitted</Typography>
+          <Typography variant="h5">Wizard Submitted</Typography>
           {wiz}
         </Grid>
       </Grid>
